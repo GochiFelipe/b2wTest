@@ -1,0 +1,9 @@
+package br.com.b2wTestJava.Repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import br.com.b2wTestJava.Models.Planets;
+
+public interface PlanetsRepository extends MongoRepository<Planets, String>{
+
+}

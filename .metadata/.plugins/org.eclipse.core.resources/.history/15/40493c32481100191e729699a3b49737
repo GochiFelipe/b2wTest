@@ -1,0 +1,6 @@
+package br.com.b2wTestJava.b2wTestJava;
+
+@Test
+public class PlanetsSaveTest {
+
+}

@@ -1,0 +1,53 @@
+package br.com.b2wTestJava.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.aggregation.ArrayOperators.IndexOfArray;
+import org.springframework.stereotype.Service;
+
+import br.com.b2wTestJava.Helper.SWApiHelper;
+import br.com.b2wTestJava.Json.PlanetJson;
+import br.com.b2wTestJava.Json.SwapiJson;
+import br.com.b2wTestJava.Models.Planet;
+import br.com.b2wTestJava.Repository.PlanetRepository;
+
+@Service
+public class PlanetService {
+
+	@Autowired
+	private PlanetRepository planetRepository;
+	private Integer filmsSize;
+	
+	
+	@SuppressWarnings("unchecked")
+	public void save(Planet planet) {
+		
+		List<String> planetsName = new ArrayList<String>();
+		
+		String planetsApi = SWApiHelper.getSWApi("https://swapi.co/api/planets/");
+		List<Object> data = SWApiHelper.montListPlanets(planetsApi, planetsName);
+		String next = ((SwapiJson) data.get(0)).getNext();
+		
+		while (next != null) {
+			String planetApiNext = SWApiHelper.getSWApi(next);
+			data = SWApiHelper.montListPlanets(planetApiNext, planetsName);
+			if (((List<String>) data.get(1)).contains(planet.getName())) {
+				filmsSize = ((SwapiJson) data.get(0)).getResults().get(((List<String>) data.get(1)).indexOf(planet.getName())).getFilms().size();
+			}
+		}
+//		
+		planet = new Planet(planet.getName(), planet.getClimate(), planet.getTerrain(), filmsSize);
+		planetRepository.save(planet);
+	}
+	
+	public Planet findByName(String name) {
+		return planetRepository.findByName(name);
+	}
+
+	public List<Planet> listAll() {
+		return planetRepository.findAll();
+	}
+	
+}

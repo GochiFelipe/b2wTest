@@ -1,0 +1,13 @@
+package br.com.b2wTestJava.Repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import br.com.b2wTestJava.Models.Planet;
+
+public interface PlanetRepository extends MongoRepository<Planet, String>{
+
+	Planet findByName();
+
+	Planet findByName(String name);
+
+}

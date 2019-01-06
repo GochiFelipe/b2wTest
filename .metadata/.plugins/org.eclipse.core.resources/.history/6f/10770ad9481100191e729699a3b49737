@@ -1,0 +1,39 @@
+package br.com.b2wTestJava.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import br.com.b2wTestJava.Models.Planets;
+import br.com.b2wTestJava.Repository.PlanetsRepository;
+
+@Service
+public class PlanetsService {
+
+	@Autowired
+	private PlanetsRepository planetsRepository;
+	
+	public void save(
+			String Name,
+			String Climate,
+			String Terrain,
+			Integer Films) {
+		
+		RestTemplate restTemplate = new RestTemplate();
+		
+		ResponseEntity<List<Planets>> planetsApi = restTemplate.exchange("https://swapi.co/api/planets/",
+				HttpMethod.GET,
+				null,
+				new ParameterizedTypeReference<List<Planets>>() {});
+		List<Planets> planets = planetsApi.getBody(); 
+		
+//		Planets planets = new Planets(Name, Climate, Terrain, Films);
+//		planetsRepository.save(planets);
+	}
+	
+}

@@ -1,0 +1,33 @@
+package br.com.b2wTestJava.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.b2wTestJava.Models.Planet;
+import br.com.b2wTestJava.Service.PlanetService;
+
+@RestController
+@RequestMapping("/api/planet")
+public class PlanetController {
+
+	@Autowired
+	private PlanetService planetService;
+	
+	@GetMapping("/")
+	public List<Planet> listAllPlanets() {
+		return planetService.listAll();
+	}
+	
+	@PostMapping("/")
+	public void savePlanet(@RequestBody Planet planet) {
+		planetService.save(planet);
+	}
+	
+	
+}

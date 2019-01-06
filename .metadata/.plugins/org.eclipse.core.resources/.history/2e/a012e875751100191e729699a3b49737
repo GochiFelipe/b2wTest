@@ -1,0 +1,37 @@
+package br.com.b2wTestJava.b2wTestJava;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import br.com.b2wTestJava.Models.Planet;
+import br.com.b2wTestJava.Service.PlanetService;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest
+public class B2wTestJavaApplicationTests {
+
+	@Test
+	public void contextLoads() {
+	}
+	
+	@Test
+	public void PlanetsServiceSaveTest() {
+		Planet planet = new Planet("Alderaan", "temperate", "grasslands, mountains", null);
+		PlanetService planetService = new PlanetService();
+		planetService.save(planet);
+		
+		Planet foundPlanet = planetService.findByName(planet.getName());
+		
+		assertEquals(foundPlanet.getName(), planet.getName());
+		assertEquals(foundPlanet.getClimate(), planet.getClimate());
+		assertEquals(foundPlanet.getTerrain(), planet.getTerrain());
+		
+		System.out.println(foundPlanet.getFilms());
+	}
+
+}
+

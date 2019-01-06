@@ -1,0 +1,23 @@
+package br.com.b2wTestJava.Service;
+
+import java.util.List;
+
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+import br.com.b2wTestJava.Json.Swapi;
+import br.com.b2wTestJava.Models.Planet;
+
+public class bacalhau {
+	
+	public static void main(String[] args) {		
+		RestTemplate restTemplate = new RestTemplate();
+		
+		ResponseEntity<Swapi> planetsApi = restTemplate.exchange("https://swapi.co/api/planets/", HttpMethod.GET, null, Swapi.class);
+		
+		System.out.println(planetsApi);
+	}
+
+}

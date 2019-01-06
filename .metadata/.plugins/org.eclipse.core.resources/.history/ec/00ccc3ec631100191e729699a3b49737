@@ -1,0 +1,10 @@
+package br.com.b2wTestJava.Preferences;
+
+public class SWApiPreference {
+	
+	public static final String NAME = "name";
+	public static final String CLIMATE = "climate";
+	public static final String TERRAIN = "terrain";
+	public static final String FILMS = "films";
+	
+}

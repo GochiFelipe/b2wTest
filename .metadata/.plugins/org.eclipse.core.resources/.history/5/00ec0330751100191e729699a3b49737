@@ -1,0 +1,14 @@
+package br.com.b2wTestJava.b2wTestJava;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class B2wTestJavaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(B2wTestJavaApplication.class, args);
+	}
+
+}
+

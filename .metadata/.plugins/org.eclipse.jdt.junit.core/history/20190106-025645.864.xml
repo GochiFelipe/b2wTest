@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="B2wTestJavaApplicationTests" project="b2wTestJava" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.b2wTestJava.b2wTestJava.B2wTestJavaApplicationTests" incomplete="true">
+    <testcase name="contextLoads" classname="br.com.b2wTestJava.b2wTestJava.B2wTestJavaApplicationTests" time="0.373"/>
+    <testcase name="PlanetsServiceSaveTest" classname="br.com.b2wTestJava.b2wTestJava.B2wTestJavaApplicationTests" incomplete="true"/>
+  </testsuite>
+</testrun>

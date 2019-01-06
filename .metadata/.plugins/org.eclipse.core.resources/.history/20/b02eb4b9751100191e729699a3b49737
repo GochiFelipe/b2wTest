@@ -1,0 +1,5 @@
+package br.com.b2wTestJava.Service;
+
+public interface PlanetService {
+
+}

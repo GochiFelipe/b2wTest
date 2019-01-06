@@ -1,0 +1,18 @@
+package br.com.b2wTestJava.b2wTestJava;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+import br.com.b2wTestJava.Controller.PlanetController;
+
+@SpringBootApplication
+@ComponentScan(basePackageClasses = PlanetController.class)
+public class B2wTestJavaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(B2wTestJavaApplication.class, args);
+	}
+
+}
+

@@ -1,0 +1,9 @@
+1546733738975	Delete element
+1546734011011	Rename type 'Planets'
+1546734036081	Rename type 'PlanetsRepository'
+1546734045108	Rename type 'PlanetsService'
+1546747834472	Rename type 'Swapi'
+1546748320886	Extract method 'GetSWApi'
+1546748495080	Extract method 'MontListPlanets'
+1546749217820	Rename type 'Helper'
+1546753180058	Rename type 'PlanetService'

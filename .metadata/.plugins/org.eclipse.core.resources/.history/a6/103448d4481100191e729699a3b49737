@@ -1,0 +1,25 @@
+package br.com.b2wTestJava.Models;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "planets")
+public class Planets {
+	
+	@Id
+	private String id;
+	private String Name;
+	private String Climate;
+	private String Terrain;
+	private Integer Films;
+	
+	public Planets(String name, String climate, String terrain, Integer films) {
+		Name = name;
+		Climate = climate;
+		Terrain = terrain;
+		Films = films;
+	}
+	
+	
+	
+}

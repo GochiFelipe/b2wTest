@@ -1,0 +1,25 @@
+package br.com.b2wTestJava.b2wTestJava;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+import br.com.b2wTestJava.Controller.PlanetController;
+import br.com.b2wTestJava.Repository.PlanetRepository;
+import br.com.b2wTestJava.Service.PlanetService;
+
+@SpringBootApplication
+@ComponentScan(basePackageClasses = {		
+		PlanetController.class,
+		PlanetService.class
+})
+@EnableMongoRepositories(basePackageClasses = PlanetRepository.class)
+public class B2wTestJavaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(B2wTestJavaApplication.class, args);
+	}
+
+}
+

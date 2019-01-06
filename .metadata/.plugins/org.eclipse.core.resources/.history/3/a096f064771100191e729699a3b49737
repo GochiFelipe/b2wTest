@@ -1,0 +1,21 @@
+package br.com.b2wTestJava.b2wTestJava;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+import br.com.b2wTestJava.Controller.PlanetController;
+import br.com.b2wTestJava.Models.Planet;
+import br.com.b2wTestJava.Repository.PlanetRepository;
+
+@SpringBootApplication
+public class B2wTestJavaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(B2wTestJavaApplication.class, args);
+	}
+
+}
+

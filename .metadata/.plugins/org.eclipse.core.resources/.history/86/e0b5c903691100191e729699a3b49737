@@ -1,0 +1,41 @@
+package br.com.b2wTestJava.Json;
+
+import java.util.List;
+
+import br.com.b2wTestJava.Models.Planet;
+
+public class Swapi {
+	
+	private String next;
+	
+	private String previus;
+	
+	private List<Planet> results;
+	
+	public Swapi() {}
+
+	public String getNext() {
+		return next;
+	}
+
+	public void setNext(String next) {
+		this.next = next;
+	}
+
+	public String getPrevius() {
+		return previus;
+	}
+
+	public void setPrevius(String previus) {
+		this.previus = previus;
+	}
+
+	public List<Planet> getResults() {
+		return results;
+	}
+
+	public void setResults(List<Planet> results) {
+		this.results = results;
+	}
+	
+}
